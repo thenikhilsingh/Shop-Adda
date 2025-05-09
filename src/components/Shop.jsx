@@ -7,7 +7,7 @@ export const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   return (
-    <div className="p-30 ">
+    <div className="pt-30 pb-37 ">
       <label htmlFor="category" className="text-4xl ">
         Choose a Category:{" "}
       </label>
