@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Outlet } from "react-router-dom";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
+import { createContext, useEffect, useState } from "react";
+import GetData from "./components/GetData";
+
+const DataContext = createContext();
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [categoryList, setCategoryList] = useState([]);
+  const [productData, setProductData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [addToCartProduct, setAddToCartProduct] = useState([]);
+  async function getProducts() {
+    try {
+      const response = await GetData();
 
+      const allCategories = [
+        ...new Set(response.data.products.map((product) => product.category)),
+      ];
+
+      const allProducts = response.data.products.map((product) => ({
+        productId: product.id,
+        productCategory: product.category,
+        productImg: product.images[0],
+        productTitle: product.title,
+        productPrice: product.price,
+        productDiscountPercentage: product.discountPercentage,
+        productDesc: product.description,
+        productDimensions: product.dimensions,
+        productRating: product.rating,
+        productShippingInformation: product.shippingInformation,
+        productWarrantyInformation: product.warrantyInformation,
+      }));
+      console.log(response);
+      setProductData(allProducts);
+      setCategoryList(allCategories);
+    } catch (error) {
+      console.log("Error message:", error.message);
+      console.log("Error status:", error.response.status);
+      console.log("Error data:", error.response.data);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="flex flex-col items-center overflow-x-hidden">
+      <DataContext.Provider
+        value={{
+          productData,
+          categoryList,
+          loading,
+          addToCartProduct,
+          setAddToCartProduct,
+        }}
+      >
+        <Header />
+        <Outlet />
+        <Footer />
+      </DataContext.Provider>
+    </div>
+  );
 }
 
-export default App
+export default App;
+export { DataContext };
