@@ -11,6 +11,7 @@ function App() {
   const [productData, setProductData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [addToCartProduct, setAddToCartProduct] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
   async function getProducts() {
     try {
       const response = await GetData();
@@ -47,8 +48,9 @@ function App() {
   useEffect(() => {
     getProducts();
   }, []);
+
   return (
-    <div className="flex flex-col items-center overflow-x-hidden">
+    <div className="flex flex-col items-center overflow-x-hidden select-none">
       <DataContext.Provider
         value={{
           productData,
@@ -56,6 +58,8 @@ function App() {
           loading,
           addToCartProduct,
           setAddToCartProduct,
+          selectedCategory,
+          setSelectedCategory,
         }}
       >
         <Header />
