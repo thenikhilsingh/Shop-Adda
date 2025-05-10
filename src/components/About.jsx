@@ -20,12 +20,17 @@ export const About = () => {
           </p>
         </div>
         <div>
-          <img className="h-90 w-90" src={ourStoryImg} alt="" />
+          <img loading="lazy" className="h-90 w-90" src={ourStoryImg} alt="" />
         </div>
       </div>
       <div className="flex justify-between items-center gap-55">
         <div>
-          <img className="h-90 w-90" src={ourCollectionImg} alt="" />
+          <img
+            loading="lazy"
+            className="h-90 w-90"
+            src={ourCollectionImg}
+            alt=""
+          />
         </div>
         <div>
           <h1 className="text-3xl font-bold">Our Collection</h1>
@@ -48,7 +53,12 @@ export const About = () => {
           </p>
         </div>
         <div>
-          <img className="h-90 w-90" src={ourPromiseImg} alt="" />
+          <img
+            loading="lazy"
+            className="h-90 w-90"
+            src={ourPromiseImg}
+            alt=""
+          />
         </div>
       </div>
     </div>

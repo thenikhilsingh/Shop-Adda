@@ -23,7 +23,7 @@ function App() {
       const allProducts = response.data.products.map((product) => ({
         productId: product.id,
         productCategory: product.category,
-        productImg: product.images[0],
+        productImg: product.images,
         productTitle: product.title,
         productPrice: product.price,
         productDiscountPercentage: product.discountPercentage,

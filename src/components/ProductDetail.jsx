@@ -4,12 +4,14 @@ import Icon from "@mdi/react";
 import { mdiArrowLeftBold, mdiArrowRightBold } from "@mdi/js";
 import { DataContext } from "../App";
 import loadingGif from "../assets/loading.gif";
-// import GetImagesData from "./GetImagesData";
 
 export const ProductDetail = () => {
-  const { productData, loading, setAddToCartProduct } = useContext(DataContext);
+  const { productData, loading, setAddToCartProduct, setSelectedCategory } =
+    useContext(DataContext);
   const { productid } = useParams();
   const [animation, setAnimation] = useState(true);
+  const [imageIndex, setImageIndex] = useState(0);
+
   function animationfunc() {
     let timer = setInterval(() => {
       setSelectedCategory(null);
@@ -19,7 +21,7 @@ export const ProductDetail = () => {
     setTimeout(() => {
       setAnimation(false);
       clearInterval(timer);
-    }, 4000);
+    }, 2000);
   }
   useEffect(() => {
     animationfunc();
@@ -38,6 +40,22 @@ export const ProductDetail = () => {
     let inr = USD * exchangeRate;
     let inrRounded = Math.floor(inr);
     return inrRounded;
+  }
+
+  function handleLeftArrow() {
+    if (imageIndex > 0) {
+      setImageIndex(imageIndex - 1);
+    } else {
+      setImageIndex(product.productImg.length - 1);
+    }
+  }
+
+  function handleRightArrow() {
+    if (imageIndex < product.productImg.length - 1) {
+      setImageIndex(imageIndex + 1);
+    } else {
+      setImageIndex(0);
+    }
   }
 
   function handleAddToCartClick() {
@@ -66,27 +84,37 @@ export const ProductDetail = () => {
         <div className="p-25">
           <div className="flex justify-around items-center w-[85vw]  ">
             <div className="flex justify-center items-center">
-              <div>
-                <Icon
-                  className="hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
-                  path={mdiArrowLeftBold}
-                  size={2}
-                />
-              </div>
+              {product.productImg.length > 1 && (
+                <div>
+                  <Icon
+                    className="hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                    path={mdiArrowLeftBold}
+                    size={2}
+                    onClick={handleLeftArrow}
+                  />
+                </div>
+              )}
               <div>
                 <img
                   className="h-[75vh]"
-                  src={product.productImg}
+                  src={
+                    product.productImg.length > 1
+                      ? product.productImg[imageIndex]
+                      : product.productImg[0]
+                  }
                   alt="productimg"
                 />
               </div>
-              <div>
-                <Icon
-                  className="hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
-                  path={mdiArrowRightBold}
-                  size={2}
-                />
-              </div>
+              {product.productImg.length > 1 && (
+                <div>
+                  <Icon
+                    className="hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                    path={mdiArrowRightBold}
+                    size={2}
+                    onClick={handleRightArrow}
+                  />
+                </div>
+              )}
             </div>
 
             <div className="w-[40vw] flex flex-col gap-4">
