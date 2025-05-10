@@ -16,7 +16,7 @@ export const Home = () => {
         </p>
         <button
           onClick={handleClick}
-          className="text-4xl bg-[#FC5E2E] rounded-xl p-3 cursor-pointer hover:scale-[1.1] active:translate-y-[5px] transition duration-200 "
+          className="text-4xl bg-[#FC5E2E] text-white rounded-xl p-3 cursor-pointer border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 "
         >
           Shop Now
         </button>

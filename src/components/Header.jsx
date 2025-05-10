@@ -5,6 +5,8 @@ import { mdiHome, mdiShopping, mdiAccount, mdiCartHeart } from "@mdi/js";
 import { NavLink } from "react-router-dom";
 import { DataContext } from "../App";
 import cartIcon from "../assets/cartIcon.png";
+import sun from "../assets/sun.png";
+import moon from "../assets/moon.png";
 
 export const Header = () => {
   const { addToCartProduct } = useContext(DataContext);

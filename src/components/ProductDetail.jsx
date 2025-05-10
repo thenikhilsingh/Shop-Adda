@@ -87,7 +87,7 @@ export const ProductDetail = () => {
               {product.productImg.length > 1 && (
                 <div>
                   <Icon
-                    className="hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                    className="border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 rounded-xl bg-[#FC5E2E] text-white cursor-pointer"
                     path={mdiArrowLeftBold}
                     size={2}
                     onClick={handleLeftArrow}
@@ -108,7 +108,7 @@ export const ProductDetail = () => {
               {product.productImg.length > 1 && (
                 <div>
                   <Icon
-                    className="hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                    className="border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 rounded-xl bg-[#FC5E2E] text-white cursor-pointer"
                     path={mdiArrowRightBold}
                     size={2}
                     onClick={handleRightArrow}
@@ -152,9 +152,9 @@ export const ProductDetail = () => {
                 <div className="flex gap-2">
                   <button
                     onClick={() => {
-                      setQuantity(quantity - 1);
+                      quantity != 1 && setQuantity(quantity - 1);
                     }}
-                    className="bg-[#FC5E2E] size-12 rounded-xl hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                    className="bg-[#FC5E2E] size-12 rounded-xl text-white border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 cursor-pointer"
                   >
                     -
                   </button>
@@ -168,7 +168,7 @@ export const ProductDetail = () => {
                     onClick={() => {
                       setQuantity(quantity + 1);
                     }}
-                    className="bg-[#FC5E2E] size-12 rounded-xl hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                    className="bg-[#FC5E2E] text-white size-12 rounded-xl border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 cursor-pointer"
                   >
                     +
                   </button>
@@ -178,7 +178,7 @@ export const ProductDetail = () => {
                 {btnFlag === false ? (
                   <button
                     onClick={handleAddToCartClick}
-                    className="bg-[#FC5E2E] p-4 text-2xl rounded-xl hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                    className="bg-[#FC5E2E] text-white p-4 text-2xl rounded-xl border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 cursor-pointer"
                   >
                     Add to Cart
                   </button>
@@ -192,7 +192,7 @@ export const ProductDetail = () => {
                       });
                       setBtnFlag(false);
                     }}
-                    className="bg-[#FC5E2E] p-4 text-2xl rounded-xl hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                    className="bg-[#FC5E2E] text-white p-4 text-2xl rounded-xl border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 cursor-pointer"
                   >
                     Remove from Cart
                   </button>

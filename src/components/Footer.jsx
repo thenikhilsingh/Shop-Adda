@@ -1,6 +1,8 @@
-import Icon from "@mdi/react";
-import { mdiLinkedin, mdiInstagram, mdiGithub } from "@mdi/js";
 import logo from "../assets/logo-footer.png";
+import { Link } from "react-router-dom";
+import linkedin from "../assets/linkedin.png";
+import instagram from "../assets/instagram.png";
+import github from "../assets/github.png";
 
 export const Footer = () => {
   return (
@@ -12,24 +14,24 @@ export const Footer = () => {
         <h1 className="text-2xl font-bold underline">Company</h1>
         <ul className="text-xl ">
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               About Us
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               Our Services
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               Privacy Policy
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               Affiliate Program
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -37,24 +39,24 @@ export const Footer = () => {
         <h1 className="text-2xl font-bold underline">Online Shop</h1>
         <ul className="text-xl">
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               Watch
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               Bag
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               Shoes
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               Dress
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -62,54 +64,55 @@ export const Footer = () => {
         <h1 className="text-2xl font-bold underline">Get Help</h1>
         <ul className="text-xl">
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               FAQ
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               Order Status
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
               Returns
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="hover:text-[#FC5E2E]" href="">
+            <Link className="hover:text-[#FC5E2E]" href="">
+              {" "}
               Payment Options
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
-      <div className="flex flex-col gap-2 pb-18 items-center">
+      <div className="flex flex-col gap-2 pb-20 items-center">
         <h1 className="text-2xl font-bold underline">Follow Us</h1>
         <ul className="flex gap-3 ">
           <li>
             <a href="https://www.linkedin.com/in/nikhil-singh-7432b827a">
-              <Icon
-                className="hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
-                path={mdiLinkedin}
-                size={1.5}
+              <img
+                className="size-8 hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
+                src={linkedin}
+                alt=""
               />
             </a>
           </li>
           <li>
             <a href="https://www.instagram.com/_thakurnikhilsingh_/">
-              <Icon
-                className="hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
-                path={mdiInstagram}
-                size={1.5}
+              <img
+                className="size-8 hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
+                src={instagram}
+                alt=""
               />
             </a>
           </li>
           <li>
             <a href="https://github.com/thenikhilsingh">
-              <Icon
-                className="hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
-                path={mdiGithub}
-                size={1.5}
+              <img
+                className="size-8 hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
+                src={github}
+                alt=""
               />
             </a>
           </li>

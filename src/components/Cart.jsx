@@ -77,12 +77,14 @@ export const Cart = () => {
                   <button
                     onClick={() => {
                       let newObj = { ...product };
-                      newObj.quantity -= 1;
+                      if (newObj.quantity != 1) {
+                        newObj.quantity -= 1;
+                      }
                       let arr = [...addToCartProduct];
                       arr[index] = newObj;
                       setAddToCartProduct(arr);
                     }}
-                    className="bg-[#FC5E2E] size-8 rounded-xl hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                    className="bg-[#FC5E2E] text-white size-8 rounded-xl border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 cursor-pointer"
                   >
                     -
                   </button>
@@ -102,14 +104,14 @@ export const Cart = () => {
                       arr[index] = newObj;
                       setAddToCartProduct(arr);
                     }}
-                    className="bg-[#FC5E2E] size-8 rounded-xl hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                    className="bg-[#FC5E2E] text-white size-8 rounded-xl border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 cursor-pointer"
                   >
                     +
                   </button>
                 </div>
                 <button
                   onClick={() => handleRemove(product.productId)}
-                  className="bg-[#FC5E2E] w-30 h-12 rounded-xl font-bold text-white text-xl hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+                  className="bg-[#FC5E2E] w-30 h-12 rounded-xl font-bold text-white text-xl border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 cursor-pointer"
                 >
                   Remove
                 </button>
@@ -150,7 +152,7 @@ export const Cart = () => {
               type="text"
               placeholder="Enter coupon code"
             />
-            <button className="bg-[#FC5E2E] h-12 px-4 rounded-xl font-bold text-white hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer">
+            <button className="bg-[#FC5E2E] h-12 px-4 rounded-xl font-bold text-white border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 cursor-pointer">
               Apply
             </button>
           </div>
@@ -163,7 +165,7 @@ export const Cart = () => {
 
           <button
             onClick={handleCheckout}
-            className="bg-[#FC5E2E] w-full rounded-xl h-15 text-3xl text-white font-bold hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+            className="bg-[#FC5E2E] w-full rounded-xl h-15 text-3xl text-white font-bold border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 cursor-pointer"
           >
             Checkout
           </button>
