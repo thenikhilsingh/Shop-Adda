@@ -7,8 +7,7 @@ import loadingGif from "../assets/loading.gif";
 // import GetImagesData from "./GetImagesData";
 
 export const ProductDetail = () => {
-  const { productData, loading, setAddToCartProduct, selectedCategory } =
-    useContext(DataContext);
+  const { productData, loading, setAddToCartProduct } = useContext(DataContext);
   const { productid } = useParams();
   const [animation, setAnimation] = useState(true);
   function animationfunc() {
@@ -25,30 +24,6 @@ export const ProductDetail = () => {
   useEffect(() => {
     animationfunc();
   }, []);
-  // const [imagesList, setImagesList] = useState(null);
-
-  // async function getAllImagesAngle(selectedCategory) {
-  //   try {
-  //     const response = await GetImagesData(selectedCategory);
-  //     console.log(response, "hlo");
-  //     const images = response.data.products[productid].images;
-  //     console.log(images);
-
-  //     setImagesList(images);
-
-  //     console.log(imagesList, "photu");
-  //   } catch (error) {
-  //     console.log("Error message:", error.message);
-  //     console.log("Error status:", error.response.status);
-  //     console.log("Error data:", error.response.data);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   if (selectedCategory && selectedCategory.length > 0) {
-  //     getAllImagesAngle(selectedCategory);
-  //   }
-  // }, [selectedCategory]);
 
   const [product, setProduct] = useState(
     !loading && productData.find((item) => item.productId === Number(productid))
