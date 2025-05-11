@@ -6,6 +6,7 @@ import loadingGif from "../assets/loading.gif";
 export const Shop = () => {
   const { categoryList, productData, selectedCategory, setSelectedCategory } =
     useContext(DataContext);
+
   const [animation, setAnimation] = useState(true);
 
   useEffect(() => {

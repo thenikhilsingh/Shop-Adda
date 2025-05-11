@@ -1,9 +1,12 @@
-import React from "react";
 import ourStoryImg from "../assets/ourStoryImg.jpg";
 import ourCollectionImg from "../assets/ourCollectionImg.jpg";
 import ourPromiseImg from "../assets/ourPromiseImg.jpg";
+import imageLoading from "../assets/imageLoading.gif";
+import { useState, useEffect } from "react";
 
 export const About = () => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   return (
     <div className="flex flex-col justify-around items-center h-[230vh] w-[85vw] pt-25">
       <div>
@@ -20,16 +23,43 @@ export const About = () => {
           </p>
         </div>
         <div>
-          <img loading="lazy" className="h-90 w-90" src={ourStoryImg} alt="" />
+          {!isImageLoaded && (
+            <img
+              loading="lazy"
+              className="absolute size-25"
+              src={imageLoading}
+              alt=""
+            />
+          )}
+          <img
+            loading="lazy"
+            className={`h-90 w-90 ${
+              !isImageLoaded ? "opacity-0" : "opacity-100"
+            } transition-opacity duration-500`}
+            src={ourStoryImg}
+            alt=""
+            onLoad={() => setIsImageLoaded(true)}
+          />
         </div>
       </div>
       <div className="flex justify-between items-center gap-55">
         <div>
+          {!isImageLoaded && (
+            <img
+              loading="lazy"
+              className="absolute size-25"
+              src={imageLoading}
+              alt=""
+            />
+          )}
           <img
             loading="lazy"
-            className="h-90 w-90"
+            className={`h-90 w-90 ${
+              !isImageLoaded ? "opacity-0" : "opacity-100"
+            } transition-opacity duration-500`}
             src={ourCollectionImg}
             alt=""
+            onLoad={() => setIsImageLoaded(true)}
           />
         </div>
         <div>
@@ -53,11 +83,22 @@ export const About = () => {
           </p>
         </div>
         <div>
+          {!isImageLoaded && (
+            <img
+              loading="lazy"
+              className="absolute size-25"
+              src={imageLoading}
+              alt=""
+            />
+          )}
           <img
             loading="lazy"
-            className="h-90 w-90"
+            className={`h-90 w-90 ${
+              !isImageLoaded ? "opacity-0" : "opacity-100"
+            } transition-opacity duration-500`}
             src={ourPromiseImg}
             alt=""
+            onLoad={() => setIsImageLoaded(true)}
           />
         </div>
       </div>
