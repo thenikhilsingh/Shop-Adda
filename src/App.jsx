@@ -11,7 +11,7 @@ function App() {
   const [productData, setProductData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [addToCartProduct, setAddToCartProduct] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
+
   async function getProducts() {
     try {
       const response = await GetData();
@@ -58,8 +58,6 @@ function App() {
           loading,
           addToCartProduct,
           setAddToCartProduct,
-          selectedCategory,
-          setSelectedCategory,
         }}
       >
         <Header />

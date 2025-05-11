@@ -1,25 +1,38 @@
 import { Card } from "./Card";
 
-export const Products = ({ productData, categoryList, selectedCategory }) => {
-  const categoriesToShow = selectedCategory ? [selectedCategory] : categoryList;
+export const Products = ({
+  productData,
+  categoryList,
+  searchedData,
+  userInput,
+}) => {
+  const database = searchedData.length === 0 ? productData : searchedData;
+
+  if (userInput && searchedData.length === 0) {
+    return (
+      <div className="text-4xl text-center">Oops! No matches. Try searching again.</div>
+    );
+  }
 
   return (
     <div className="pt-10 mb-10">
-      {categoriesToShow.map((category, idx) => {
-        const productsInCategory = productData.filter(
+      {categoryList.map((category) => {
+        const productsInCategory = database.filter(
           (product) => product.productCategory === category
         );
-
         if (productsInCategory.length === 0) return null;
 
         return (
-          <div className="border-4 w-[85vw] rounded-2xl mb-10 shadow-lg">
+          <div
+            className="border-4 w-[85vw] rounded-2xl mb-10 shadow-lg"
+            key={category}
+          >
             <h1 className="text-4xl font-bold w-[100%] bg-[#6020BF] text-white rounded-t-xl p-4">
               {category}
             </h1>
             <div className="p-5 flex flex-wrap gap-6 justify-center items-center">
               {productsInCategory.map((product) => (
-                <Card key={product.productId} productData={product} />
+                <Card key={product.productId} database={product} />
               ))}
             </div>
           </div>

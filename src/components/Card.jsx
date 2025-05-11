@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import imageLoading from "../assets/imageLoading.gif";
 
-export const Card = ({ productData }) => {
+export const Card = ({ database }) => {
   const navigate = useNavigate();
   function handleCardClick() {
-    navigate(`/shop/product/${productData.productId}`);
+    navigate(`/shop/product/${database.productId}`);
   }
 
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -24,12 +24,12 @@ export const Card = ({ productData }) => {
           className={`${
             !isImageLoaded ? "opacity-0" : "opacity-100"
           } transition-opacity duration-500`}
-          src={productData.productImg[0]}
+          src={database.productImg[0]}
           alt="Product Image"
           onLoad={() => setIsImageLoaded(true)}
         />
       </div>
-      <div>{productData.productTitle}</div>
+      <div>{database.productTitle}</div>
     </div>
   );
 };

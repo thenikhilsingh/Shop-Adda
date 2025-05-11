@@ -11,6 +11,7 @@ export const ProductDetail = () => {
   const { productid } = useParams();
   const [animation, setAnimation] = useState(true);
   const [imageIndex, setImageIndex] = useState(0);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   function animationfunc() {
     let timer = setInterval(() => {
@@ -90,12 +91,14 @@ export const ProductDetail = () => {
             <div className="flex justify-center items-center">
               {product.productImg.length > 1 && (
                 <div>
-                  <Icon
-                    className="border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 rounded-xl bg-[#FC5E2E] text-white cursor-pointer"
-                    path={mdiArrowLeftBold}
-                    size={2}
-                    onClick={handleLeftArrow}
-                  />
+                  {isImageLoaded && (
+                    <Icon
+                      className="border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 rounded-xl bg-[#FC5E2E] text-white cursor-pointer"
+                      path={mdiArrowLeftBold}
+                      size={2}
+                      onClick={handleLeftArrow}
+                    />
+                  )}
                 </div>
               )}
               <div>
@@ -107,16 +110,19 @@ export const ProductDetail = () => {
                       : product.productImg[0]
                   }
                   alt="productimg"
+                  onLoad={() => setIsImageLoaded(true)}
                 />
               </div>
               {product.productImg.length > 1 && (
                 <div>
-                  <Icon
-                    className="border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 rounded-xl bg-[#FC5E2E] text-white cursor-pointer"
-                    path={mdiArrowRightBold}
-                    size={2}
-                    onClick={handleRightArrow}
-                  />
+                  {isImageLoaded && (
+                    <Icon
+                      className="border-2 hover:shadow-[0px_0px_13px_0px_#FC5E2E] hover:bg-white hover:text-[#FC5E2E] hover:border-[#FC5E2E] hover:border-2 active:translate-y-[5px] transition duration-200 rounded-xl bg-[#FC5E2E] text-white cursor-pointer"
+                      path={mdiArrowRightBold}
+                      size={2}
+                      onClick={handleRightArrow}
+                    />
+                  )}
                 </div>
               )}
             </div>
