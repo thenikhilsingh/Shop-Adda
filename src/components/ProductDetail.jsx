@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import Icon from "@mdi/react";
 import { mdiArrowLeftBold, mdiArrowRightBold } from "@mdi/js";
@@ -27,9 +27,13 @@ export const ProductDetail = () => {
     animationfunc();
   }, []);
 
-  const [product, setProduct] = useState(
-    !loading && productData.find((item) => item.productId === Number(productid))
-  );
+  const product = useMemo(() => {
+    return (
+      !loading &&
+      productData.find((item) => item.productId === Number(productid))
+    );
+  }, [productid, loading]);
+
   const [quantity, setQuantity] = useState(1);
 
   const [btnFlag, setBtnFlag] = useState(false);

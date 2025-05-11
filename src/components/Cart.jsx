@@ -63,7 +63,7 @@ export const Cart = () => {
             >
               <div>
                 <img
-                  src={product.productImg}
+                  src={product.productImg[0]}
                   alt={product.productTitle}
                   className="h-32"
                 />
