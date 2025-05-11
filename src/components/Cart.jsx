@@ -59,13 +59,13 @@ export const Cart = () => {
           addToCartProduct.map((product, index) => (
             <div
               key={index}
-              className="flex justify-center items-center border-2 rounded-2xl gap-10 p-2 border-[#FC5E2E]"
+              className="flex justify-start items-center border-2 rounded-2xl  gap-10 p-2 border-[#FC5E2E] w-[40vw] "
             >
               <div>
                 <img
                   src={product.productImg[0]}
                   alt={product.productTitle}
-                  className="h-32"
+                  className="size-40"
                 />
               </div>
               <div className="flex flex-col gap-2">
