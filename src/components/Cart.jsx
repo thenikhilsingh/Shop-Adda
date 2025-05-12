@@ -44,7 +44,7 @@ export const Cart = () => {
   let total = subtotal + shipping + platformfee + discount;
 
   return (
-    <div className="pt-32 pb-25 flex justify-around w-[85vw]">
+    <div className="pt-15 sm:pt-20 lg:pt-25 pb-15 flex flex-col md:flex-row justify-around w-[85vw]">
       <div className="flex flex-col gap-8">
         <h1 className="text-4xl font-bold">Cart</h1>
 
@@ -59,7 +59,7 @@ export const Cart = () => {
           addToCartProduct.map((product, index) => (
             <div
               key={index}
-              className="flex justify-start items-center border-2 rounded-2xl  gap-10 p-2 border-[#FC5E2E] w-[40vw] "
+              className="flex justify-start items-center border-2 rounded-2xl  gap-10 p-2 border-[#FC5E2E] md:w-[40vw] "
             >
               <div>
                 <img
@@ -69,8 +69,10 @@ export const Cart = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <div className="text-3xl font-bold">{product.productTitle}</div>
-                <div className="text-2xl font-bold">
+                <div className="text-xl sm:text-2xl md:text-xl lg:text-2xl font-bold">
+                  {product.productTitle}
+                </div>
+                <div className="text-xl sm:text-2xl md:text-xl lg:text-2xl font-bold">
                   ₹{Math.floor(product.productPrice * 83.5)}
                 </div>
                 <div className="flex gap-2">
@@ -121,7 +123,7 @@ export const Cart = () => {
         )}
       </div>
 
-      <div className="w-[30vw]">
+      <div className="md:w-[40vw]">
         <h1 className="text-4xl font-bold">Bill</h1>
         <div className="text-2xl">
           <div className="flex justify-between">

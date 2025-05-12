@@ -86,8 +86,8 @@ export const ProductDetail = () => {
           <img src={loadingGif} alt="" />
         </div>
       ) : (
-        <div className="p-25">
-          <div className="flex justify-around items-center w-[85vw]  ">
+        <div className="p-10 md:pt-25">
+          <div className="flex flex-col md:flex-row justify-around md:items-start items-center w-[85vw]  ">
             <div className="flex justify-center items-center">
               {product.productImg.length > 1 && (
                 <div>
@@ -103,7 +103,7 @@ export const ProductDetail = () => {
               )}
               <div>
                 <img
-                  className="h-[75vh]"
+                  className="md:h-[100vh] lg:h-[75vh] h-[75vh]"
                   src={
                     product.productImg.length > 1
                       ? product.productImg[imageIndex]
@@ -127,19 +127,19 @@ export const ProductDetail = () => {
               )}
             </div>
 
-            <div className="w-[40vw] flex flex-col gap-4">
-              <div className="text-[#FC5E2E] font-bold text-4xl">
+            <div className="md:w-[35vw] lg:w-[40vw] flex flex-col gap-4">
+              <div className="text-[#FC5E2E] font-bold md:text-2xl lg:text-4xl text-4xl">
                 {product.productTitle}
               </div>
-              <div className="flex gap-2 text-3xl font-bold">
+              <div className="flex gap-2 md:text-xl lg:text-3xl text-3xl font-bold">
                 <div>₹{currencyConverter(USD)}</div>
                 <div className="text-[#6C6B6A]">
                   <del>₹{OriginalPrice(discount, discountedPrice)}</del>
                 </div>
               </div>
               <hr className="border-1 border-[#6C6B6A]" />
-              <div className="text-2xl ">{product.productDesc}</div>
-              <div className="text-2xl">
+              <div className="md:text-lg lg:text-2xl text-2xl ">{product.productDesc}</div>
+              <div className="md:text-lg lg:text-2xl text-2xl">
                 <div>Dimensions</div>
                 <div className="text-[#454341] ">
                   width: {product.productDimensions.width}, height:
@@ -147,7 +147,7 @@ export const ProductDetail = () => {
                   {product.productDimensions.depth}
                 </div>
               </div>
-              <div className="text-2xl">
+              <div className="md:text-lg lg:text-2xl text-2xl">
                 <div className="flex gap-2">
                   <div>Rating: </div>
                   <div className="text-[#454341] ">{product.productRating}</div>
@@ -157,7 +157,7 @@ export const ProductDetail = () => {
                   <li>{product.productWarrantyInformation}</li>
                 </ul>
               </div>
-              <div className="flex text-2xl items-center">
+              <div className="flex md:text-lg lg:text-2xl text-2xl items-center">
                 <div>Quantity:</div>
                 <div className="flex gap-2">
                   <button

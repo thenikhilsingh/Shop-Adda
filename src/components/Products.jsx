@@ -10,12 +10,14 @@ export const Products = ({
 
   if (userInput && searchedData.length === 0) {
     return (
-      <div className="text-4xl text-center">Oops! No matches. Try searching again.</div>
+      <div className="text-4xl text-center h-63">
+        Oops! No matches. Try searching again.
+      </div>
     );
   }
 
   return (
-    <div className="pt-10 mb-10">
+    <div className="pt-5 mb-5">
       {categoryList.map((category) => {
         const productsInCategory = database.filter(
           (product) => product.productCategory === category
@@ -24,10 +26,10 @@ export const Products = ({
 
         return (
           <div
-            className="border-4 w-[85vw] rounded-2xl mb-10 shadow-lg"
+            className="border-3 sm:border-4 w-[85vw] rounded-2xl mb-10 shadow-lg"
             key={category}
           >
-            <h1 className="text-4xl font-bold w-[100%] bg-[#6020BF] text-white rounded-t-xl p-4">
+            <h1 className="text-md sm:text-xl md:text-3xl lg:text-4xl font-bold w-[100%] bg-[#6020BF] text-white rounded-t-xl p-2 ">
               {category}
             </h1>
             <div className="p-5 flex flex-wrap gap-6 justify-center items-center">

@@ -6,13 +6,15 @@ import github from "../assets/github.png";
 
 export const Footer = () => {
   return (
-    <div className="flex justify-around items-center w-screen bg-[#FADED3] h-70">
-      <div>
-        <img src={logo} alt="" />
+    <div className="flex justify-around  px-2 py-5 gap-2 w-screen bg-[#FADED3] h-">
+      <div className="flex items-center">
+        <img className="h-6 sm:h-15 md:h-18 lg:h-25 " src={logo} alt="" />
       </div>
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-bold underline">Company</h1>
-        <ul className="text-xl ">
+        <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold underline">
+          Company
+        </h1>
+        <ul className="text-xs sm:text-sm md:text-md lg:text-lg ">
           <li>
             <Link className="hover:text-[#FC5E2E]" href="">
               About Us
@@ -36,8 +38,10 @@ export const Footer = () => {
         </ul>
       </div>
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-bold underline">Online Shop</h1>
-        <ul className="text-xl">
+        <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl  font-bold underline">
+          Online Shop
+        </h1>
+        <ul className="text-xs sm:text-sm md:text-md lg:text-lg">
           <li>
             <Link className="hover:text-[#FC5E2E]" href="">
               Watch
@@ -61,8 +65,10 @@ export const Footer = () => {
         </ul>
       </div>
       <div className="flex flex-col gap-2">
-        <h1 className="text-2xl font-bold underline">Get Help</h1>
-        <ul className="text-xl">
+        <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold underline">
+          Get Help
+        </h1>
+        <ul className="text-xs sm:text-sm md:text-md lg:text-lg">
           <li>
             <Link className="hover:text-[#FC5E2E]" href="">
               FAQ
@@ -80,19 +86,20 @@ export const Footer = () => {
           </li>
           <li>
             <Link className="hover:text-[#FC5E2E]" href="">
-              {" "}
               Payment Options
             </Link>
           </li>
         </ul>
       </div>
-      <div className="flex flex-col gap-2 pb-20 items-center">
-        <h1 className="text-2xl font-bold underline">Follow Us</h1>
+      <div className="flex flex-col gap-2  items-center">
+        <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold underline">
+          Follow Us
+        </h1>
         <ul className="flex gap-3 ">
           <li>
             <a href="https://www.linkedin.com/in/nikhil-singh-7432b827a">
               <img
-                className="size-8 hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
+                className="size-4  md:size-6 lg:size-8 hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
                 src={linkedin}
                 alt=""
               />
@@ -101,7 +108,7 @@ export const Footer = () => {
           <li>
             <a href="https://www.instagram.com/_thakurnikhilsingh_/">
               <img
-                className="size-8 hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
+                className="size-4  md:size-6 lg:size-8 hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
                 src={instagram}
                 alt=""
               />
@@ -110,7 +117,7 @@ export const Footer = () => {
           <li>
             <a href="https://github.com/thenikhilsingh">
               <img
-                className="size-8 hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
+                className="size-4 md:size-6 lg:size-8 hover:scale-[1.1] active:translate-y-[5px] transition duration-200"
                 src={github}
                 alt=""
               />

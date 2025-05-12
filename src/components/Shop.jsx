@@ -40,24 +40,24 @@ export const Shop = () => {
   return (
     <>
       {animation ? (
-        <div className="pt-30 pb-37">
+        <div className="sm:pt-18">
           <img src={loadingGif} alt="Loading..." />
         </div>
       ) : (
-        <div className="pt-30 pb-37 flex flex-col gap-5 w-[85vw] ">
+        <div className="pt-18 sm:pt-25 pb-3 flex flex-col gap-5 w-[85vw] ">
           <div className="flex items-center ">
             <input
               type="text"
               placeholder="Search a Product by Category or Product Name"
               id="searchbar"
               name="searchbar"
-              className="border-2 rounded-2xl p-1 w-[30vw] absolute"
+              className="border-2 text-xs sm:text-sm md:text-base h-10 rounded-2xl p-1 w-[85vw] sm:w-[65vw] lg:w-[50vw] absolute"
               value={userInput}
               onChange={handleSearchBar}
             />
             <label htmlFor="searchbar">
               <Icon
-                className="relative left-[28vw] text-[#FC5E2E]"
+                className="relative left-[77vw] sm:left-[61vw] lg:left-[47vw] text-[#FC5E2E]"
                 path={mdiMagnify}
                 size={1}
               />

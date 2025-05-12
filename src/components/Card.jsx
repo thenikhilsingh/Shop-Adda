@@ -13,7 +13,7 @@ export const Card = ({ database }) => {
   return (
     <div
       onClick={handleCardClick}
-      className="w-50 h-65 rounded-2xl flex flex-col justify-around items-center bg-[#FF8552] p-5 text-center font-bold shadow-[0px_9px_18px_-6px_#000000] hover:bg-[#FC5E2E] hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
+      className="w-30 h-45 sm:w-37 sm:h-54 md:w-45 md:h-60  rounded-2xl flex flex-col justify-around items-center bg-[#FF8552] p-5 text-center font-bold shadow-[0px_9px_18px_-6px_#000000] hover:bg-[#FC5E2E] hover:scale-[1.1] active:translate-y-[5px] transition duration-200 cursor-pointer"
     >
       <div className="flex justify-center items-center">
         {!isImageLoaded && (
@@ -29,7 +29,9 @@ export const Card = ({ database }) => {
           onLoad={() => setIsImageLoaded(true)}
         />
       </div>
-      <div>{database.productTitle}</div>
+      <div className="text-xs sm:text-sm md:text-base">
+        {database.productTitle}
+      </div>
     </div>
   );
 };
