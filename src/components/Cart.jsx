@@ -26,7 +26,7 @@ export const Cart = () => {
         clearInterval(intervalId);
         setAddToCartProduct([]);
         navigate("/cart");
-      }, 400000000);
+      }, 4000);
     } else {
       alert(
         "Your cart is empty. Please add items before proceeding to checkout."
