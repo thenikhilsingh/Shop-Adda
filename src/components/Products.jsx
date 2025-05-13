@@ -10,7 +10,7 @@ export const Products = ({
 
   if (userInput && searchedData.length === 0) {
     return (
-      <div className="text-4xl text-center h-63">
+      <div className="text-4xl text-center h-screen">
         Oops! No matches. Try searching again.
       </div>
     );

@@ -82,7 +82,7 @@ export const ProductDetail = () => {
   return (
     <>
       {animation ? (
-        <div className="p-25">
+        <div className="p-25 h-screen">
           <img src={loadingGif} alt="" />
         </div>
       ) : (

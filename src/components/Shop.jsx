@@ -40,7 +40,7 @@ export const Shop = () => {
   return (
     <>
       {animation ? (
-        <div className="sm:pt-18">
+        <div className="sm:pt-18 h-screen">
           <img src={loadingGif} alt="Loading..." />
         </div>
       ) : (

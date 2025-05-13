@@ -8,7 +8,7 @@ export const Home = () => {
     navigate("/shop");
   }
   return (
-    <div className="flex justify-between items-center w-[85vw] py-21.5 sm:pb-12 lg:pt-0 lg:pb-0 ">
+    <div className="flex justify-between items-center w-[85vw] lg:pt-21 sm:pb-12  lg:pb-0 h-screen ">
       <div className="w-[250px] sm:w-[280px] md:w-[320px] lg:size-[600px] flex flex-col justify-center items-start gap-4">
         <p className="text-xl sm:text-3xl md:text-4xl lg:text-6xl">
           Style meets savings at ShopAdda. Discover what you love at great
