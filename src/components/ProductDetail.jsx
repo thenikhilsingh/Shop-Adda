@@ -82,7 +82,7 @@ export const ProductDetail = () => {
   return (
     <>
       {animation ? (
-        <div className="p-25 h-screen">
+        <div className="p-25 h-screen flex justify-center items-center">
           <img src={loadingGif} alt="" />
         </div>
       ) : (

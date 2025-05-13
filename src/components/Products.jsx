@@ -1,4 +1,5 @@
 import { Card } from "./Card";
+import searchMessage from "../assets/searchMessage.png";
 
 export const Products = ({
   productData,
@@ -10,8 +11,11 @@ export const Products = ({
 
   if (userInput && searchedData.length === 0) {
     return (
-      <div className="text-4xl text-center h-screen">
-        Oops! No matches. Try searching again.
+      <div className=" flex flex-col gap-10 text-5xl items-center text-center h-screen">
+        <p>Oops! No matches. Try searching again.</p>
+        <div>
+          <img className="md:h-50" src={searchMessage} alt="" />
+        </div>
       </div>
     );
   }
